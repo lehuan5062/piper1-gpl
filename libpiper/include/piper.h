@@ -6,19 +6,19 @@
 #include <stdint.h>
 #include <uchar.h>
 
-// DLL export/import macros for Windows
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* DLL export/import macro for Windows */
 #ifdef _WIN32
-  #ifdef PIPER_BUILDING_DLL
+  #ifdef PIPER_EXPORTS
     #define PIPER_API __declspec(dllexport)
   #else
     #define PIPER_API __declspec(dllimport)
   #endif
 #else
   #define PIPER_API
-#endif
-
-#ifdef __cplusplus
-extern "C" {
 #endif
 
 #define PIPER_OK 0
